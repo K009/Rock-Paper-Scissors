@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import "./App.css";
 import Player from "./components/Player";
 
+//Trzeba: ogarnac stany graczy jak wybieraja bron zeby funkcja selectWinner dobrze pokazywala :)
+
 const weapon = ["rock", "paper", "scissors"];
+const score = 0;
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       playerOne: weapon[0],
+      score,
       playerTwo: weapon[0],
       winner: "",
     };
@@ -45,6 +49,9 @@ class App extends Component {
       (playerOne === "paper" && playerTwo === "rock") ||
       (playerOne === "scissors" && playerTwo === "paper")
     ) {
+      this.setState({
+        playerOne: score + 1,
+      });
       return "Player one wins!";
     } else {
       return "Player two wins!";
@@ -52,10 +59,10 @@ class App extends Component {
   };
 
   selectWeapon = (weapon) => {
-    //in argument it gets a value that is going to be set for playerOne
+    //w argumencie dostaje zmienna ktora ma ustawic dla playerOne
     this.setState({
-      playerOne: weapon, //here it gets changed
-      winner: "", //winner without any changes - still ""
+      playerOne: weapon, //tutaj ustawia
+      winner: "", //winner wciaz bez zmian wartosci - wynosi ""
     });
   };
 
@@ -69,9 +76,10 @@ class App extends Component {
     const { playerOne, playerTwo, winner } = this.state;
     return (
       <div className="App">
+        Hello React :)
         <div className="Players">
-          <Player playerName="Tom" weapon={playerOne} />
-          <Player playerName="Mary" weapon={playerTwo} />
+          <Player playerName="Tomek" weapon={playerOne} score={playerOne} />
+          <Player playerName="Agata" weapon={playerTwo} />
         </div>
         <div>
           <button className="weapon" onClick={() => this.selectWeapon("rock")}>

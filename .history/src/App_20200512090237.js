@@ -3,6 +3,7 @@ import "./App.css";
 import Player from "./components/Player";
 
 const weapon = ["rock", "paper", "scissors"];
+const score = 0;
 
 class App extends Component {
   constructor() {
@@ -45,6 +46,9 @@ class App extends Component {
       (playerOne === "paper" && playerTwo === "rock") ||
       (playerOne === "scissors" && playerTwo === "paper")
     ) {
+      this.setState({
+        playerOne: score + 1,
+      });
       return "Player one wins!";
     } else {
       return "Player two wins!";
@@ -52,10 +56,10 @@ class App extends Component {
   };
 
   selectWeapon = (weapon) => {
-    //in argument it gets a value that is going to be set for playerOne
+    //w argumencie dostaje zmienna ktora ma ustawic dla playerOne
     this.setState({
-      playerOne: weapon, //here it gets changed
-      winner: "", //winner without any changes - still ""
+      playerOne: weapon, //tutaj ustawia
+      winner: "", //winner wciaz bez zmian wartosci - wynosi ""
     });
   };
 

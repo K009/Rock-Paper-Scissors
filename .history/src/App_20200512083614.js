@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Player from "./components/Player";
 
+//Trzeba: ogarnac stany graczy jak wybieraja bron zeby funkcja selectWinner dobrze pokazywala :)
+
 const weapon = ["rock", "paper", "scissors"];
 
 class App extends Component {
@@ -16,11 +18,10 @@ class App extends Component {
   }
 
   startGame = () => {
+    const { playerTwo } = this.state;
     let counter = 0;
     let gameInterval = setInterval(() => {
-      //to make a delay
       counter++;
-      console.log(counter);
       this.setState({
         playerTwo: weapon[Math.floor(Math.random() * weapon.length)],
         winner: "",
@@ -31,12 +32,13 @@ class App extends Component {
           winner: this.selectWinner(),
         });
       }
-    }, 100);
+    });
+
+    console.log(playerTwo);
   };
 
   selectWinner = () => {
     const { playerOne, playerTwo } = this.state;
-    console.log("Player One: " + playerOne + "Player Two: " + playerTwo);
     if (playerOne === playerTwo) {
       console.log("It's a tie");
       return "It's a tie";
@@ -52,11 +54,13 @@ class App extends Component {
   };
 
   selectWeapon = (weapon) => {
-    //in argument it gets a value that is going to be set for playerOne
+    //w argumencie dostaje zmienna ktora ma ustawic dla playerOne
+    const { playerOne } = this.state;
     this.setState({
-      playerOne: weapon, //here it gets changed
-      winner: "", //winner without any changes - still ""
+      playerOne: weapon, //tutaj ustawia
+      winner: "", //winner wciaz bez zmian wartosci - wynosi ""
     });
+    console.log("Actual playerOne's weapon: " + playerOne);
   };
 
   increment() {
@@ -69,9 +73,10 @@ class App extends Component {
     const { playerOne, playerTwo, winner } = this.state;
     return (
       <div className="App">
+        Hello React :)
         <div className="Players">
-          <Player playerName="Tom" weapon={playerOne} />
-          <Player playerName="Mary" weapon={playerTwo} />
+          <Player playerName="Tomek" weapon={playerOne} />
+          <Player playerName="Agata" weapon={playerTwo} />
         </div>
         <div>
           <button className="weapon" onClick={() => this.selectWeapon("rock")}>

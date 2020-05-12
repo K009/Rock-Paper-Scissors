@@ -3,7 +3,6 @@ import "./App.css";
 import Player from "./components/Player";
 
 const weapon = ["rock", "paper", "scissors"];
-
 class App extends Component {
   constructor() {
     super();
@@ -16,34 +15,22 @@ class App extends Component {
   }
 
   startGame = () => {
-    let counter = 0;
-    let gameInterval = setInterval(() => {
-      //to make a delay
-      counter++;
-      console.log(counter);
-      this.setState({
-        playerTwo: weapon[Math.floor(Math.random() * weapon.length)],
-        winner: "",
-      });
-      if (counter > 5) {
-        clearInterval(gameInterval);
-        this.setState({
-          winner: this.selectWinner(),
-        });
-      }
-    }, 100);
+    const { playerTwo } = this.state;
+    this.setState({
+      playerTwo: weapon[Math.floor(Math.random() * weapon.length)],
+      winner: "",
+    });
+    console.log(playerTwo);
   };
 
   selectWinner = () => {
     const { playerOne, playerTwo } = this.state;
-    console.log("Player One: " + playerOne + "Player Two: " + playerTwo);
     if (playerOne === playerTwo) {
       console.log("It's a tie");
       return "It's a tie";
     } else if (
       (playerOne === "rock" && playerTwo === "scissors") ||
-      (playerOne === "paper" && playerTwo === "rock") ||
-      (playerOne === "scissors" && playerTwo === "paper")
+      (playerOne === "paper" && playerTwo === "rock")
     ) {
       return "Player one wins!";
     } else {
@@ -52,11 +39,13 @@ class App extends Component {
   };
 
   selectWeapon = (weapon) => {
-    //in argument it gets a value that is going to be set for playerOne
+    //w argumencie dostaje zmienna ktora ma ustawic dla playerOne
+    const { playerOne } = this.state;
     this.setState({
-      playerOne: weapon, //here it gets changed
-      winner: "", //winner without any changes - still ""
+      playerOne: weapon, //tutaj ustawia
+      winner: "", //winner wciaz bez zmian wartosci - wynosi ""
     });
+    console.log(playerOne);
   };
 
   increment() {
@@ -64,14 +53,13 @@ class App extends Component {
       counter: this.state.counter + 1,
     });
   }
-
   render() {
-    const { playerOne, playerTwo, winner } = this.state;
     return (
       <div className="App">
+        Hello React :)
         <div className="Players">
-          <Player playerName="Tom" weapon={playerOne} />
-          <Player playerName="Mary" weapon={playerTwo} />
+          <Player playerName="Tomek" />
+          <Player playerName="Agata" />
         </div>
         <div>
           <button className="weapon" onClick={() => this.selectWeapon("rock")}>
@@ -86,13 +74,13 @@ class App extends Component {
           <button className="weapon" onClick={() => this.selectWeapon("paper")}>
             paper
           </button>
+          <button onClick={this.increment.bind(this)}>Plus</button>
+          <output>{this.state.counter}</output>
         </div>
-        <div className="winner">{winner ? this.selectWinner() : null}</div>
-        <button className="start" onClick={this.startGame}>
+        <div className="winner">{this.selectWinner()}</div>
+        <button className="start" onClick={() => this.startGame()}>
           Start
         </button>
-        <button onClick={this.increment.bind(this)}>Plus</button>
-        <output>{this.state.counter}</output>
       </div>
     );
   }

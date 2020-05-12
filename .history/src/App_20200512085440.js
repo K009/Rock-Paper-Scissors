@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import "./App.css";
 import Player from "./components/Player";
 
+//Trzeba: ogarnac stany graczy jak wybieraja bron zeby funkcja selectWinner dobrze pokazywala :)
+
 const weapon = ["rock", "paper", "scissors"];
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      playerOne: weapon[0],
+      playerOne: weapon[0],score[0],
       playerTwo: weapon[0],
       winner: "",
     };
@@ -16,6 +18,7 @@ class App extends Component {
   }
 
   startGame = () => {
+    const { playerTwo } = this.state;
     let counter = 0;
     let gameInterval = setInterval(() => {
       //to make a delay
@@ -52,10 +55,11 @@ class App extends Component {
   };
 
   selectWeapon = (weapon) => {
-    //in argument it gets a value that is going to be set for playerOne
+    //w argumencie dostaje zmienna ktora ma ustawic dla playerOne
+    const { playerOne } = this.state;
     this.setState({
-      playerOne: weapon, //here it gets changed
-      winner: "", //winner without any changes - still ""
+      playerOne: weapon, //tutaj ustawia
+      winner: "", //winner wciaz bez zmian wartosci - wynosi ""
     });
   };
 
@@ -69,9 +73,10 @@ class App extends Component {
     const { playerOne, playerTwo, winner } = this.state;
     return (
       <div className="App">
+        Hello React :)
         <div className="Players">
-          <Player playerName="Tom" weapon={playerOne} />
-          <Player playerName="Mary" weapon={playerTwo} />
+          <Player playerName="Tomek" weapon={playerOne} />
+          <Player playerName="Agata" weapon={playerTwo} />
         </div>
         <div>
           <button className="weapon" onClick={() => this.selectWeapon("rock")}>
