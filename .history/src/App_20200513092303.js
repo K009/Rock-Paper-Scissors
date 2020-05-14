@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Player from "./components/Player";
-import rock from "./components/img/rock.png";
-import scissors from "./components/img/scissors.png";
-import paper from "./components/img/paper.png";
 
 const weapon = ["rock", "paper", "scissors"];
 
@@ -76,32 +73,31 @@ class App extends Component {
         <div className="Main-part">
           <div className="Players">
             <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
-            <Player playerName="BOT" weapon={playerTwo} />
+            <div className="break"> </div>
+            <Player playerName="Mary" weapon={playerTwo} />
           </div>
-          <div className="images">
-            <img
-              className="weaponimg"
-              src={rock}
+          <div className="buttons">
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("rock")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={scissors}
+            >
+              rock
+            </button>
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("scissors")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={paper}
+            >
+              scissors
+            </button>
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("paper")}
-              alt="Rock"
-            />
+            >
+              paper
+            </button>
           </div>
-          <div className="buttons"></div>
           <div className="winner">{winner ? this.selectWinner() : null}</div>
-          <button className="weapon" onClick={this.startGame}>
+          <button className="start" onClick={this.startGame}>
             Start
           </button>
         </div>

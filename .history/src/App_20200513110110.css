@@ -20,15 +20,14 @@
 
 .break {
   width: 100px;
-  color: white;
-  font-size: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #ffde22;
+  min-height: 20vh;
   background-color: red;
-  margin-top: 30%;
   float: left;
 }
 
+.output {
+  color: white;
+}
 .weaponimg {
   width: 150px;
   height: 150px;
@@ -57,7 +56,6 @@
   color: #ffde22;
   font-size: 20px;
   margin-top: 15px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 footer {

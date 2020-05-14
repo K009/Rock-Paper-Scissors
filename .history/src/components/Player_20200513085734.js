@@ -6,6 +6,9 @@ const Player = ({ playerName }) => {
     <div className={style.player}>
       <h1>{playerName}</h1>
     </div>
+    <button className="weapon" onClick={() => this.selectWeapon("rock")}>
+    rock
+  </button>
   );
 };
 

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Player from "./components/Player";
-import rock from "./components/img/rock.png";
-import scissors from "./components/img/scissors.png";
-import paper from "./components/img/paper.png";
 
 const weapon = ["rock", "paper", "scissors"];
 
@@ -73,38 +70,31 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Header" />
-        <div className="Main-part">
-          <div className="Players">
-            <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
-            <Player playerName="BOT" weapon={playerTwo} />
-          </div>
-          <div className="images">
-            <img
-              className="weaponimg"
-              src={rock}
-              onClick={() => this.selectWeapon("rock")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={scissors}
-              onClick={() => this.selectWeapon("scissors")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={paper}
-              onClick={() => this.selectWeapon("paper")}
-              alt="Rock"
-            />
-          </div>
-          <div className="buttons"></div>
-          <div className="winner">{winner ? this.selectWinner() : null}</div>
-          <button className="weapon" onClick={this.startGame}>
-            Start
+        <div className="Players">
+          <Player playerName="Tom" weapon={playerOne} />
+          <div className="break">a </div>
+          <Player playerName="Mary" weapon={playerTwo} />
+        </div>
+        <div>
+          <button className="weapon" onClick={() => this.selectWeapon("rock")}>
+            rock
+          </button>
+          <button
+            className="weapon"
+            onClick={() => this.selectWeapon("scissors")}
+          >
+            scissors
+          </button>
+          <button className="weapon" onClick={() => this.selectWeapon("paper")}>
+            paper
           </button>
         </div>
+        <div className="winner">{winner ? this.selectWinner() : null}</div>
+        <button className="start" onClick={this.startGame}>
+          Start
+        </button>
+        <button onClick={this.increment.bind(this)}>Plus</button>
+        <output>{this.state.counter}</output>
         <footer />
       </div>
     );

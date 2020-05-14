@@ -1,5 +1,5 @@
 .Header {
-  min-height: 10vh;
+  min-height: 20vh;
   text-align: center;
   justify-content: space-around;
   background-color: #ffde22;
@@ -9,7 +9,7 @@
 
 .Main-part {
   background-color: red;
-  min-height: 80vh;
+  min-height: 60vh;
   text-align: center;
 }
 
@@ -20,48 +20,33 @@
 
 .break {
   width: 100px;
-  color: white;
-  font-size: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #ffde22;
+  min-height: 20vh;
   background-color: red;
-  margin-top: 30%;
   float: left;
 }
 
-.weaponimg {
-  width: 150px;
-  height: 150px;
-}
-
-.weaponimg:hover {
-  width: 160px;
-  height: 160px;
-  cursor: pointer;
-}
-
 .weapon {
-  background: #ffde22;
-  margin-top: 15px;
+  background: white;
   border: none;
   padding: 10px 20px;
   color: black;
 }
 
 .weapon:hover {
-  background: #ecce20;
+  background: rgb(209, 208, 208);
   cursor: pointer;
 }
 
-.winner {
-  color: #ffde22;
-  font-size: 20px;
+.start {
+  background: white;
+  border: none;
   margin-top: 15px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 10px 20px;
+  color: black;
 }
 
 footer {
-  min-height: 10vh;
+  min-height: 20vh;
   background-color: #ffde22;
   width: 100%;
   position: absolute;

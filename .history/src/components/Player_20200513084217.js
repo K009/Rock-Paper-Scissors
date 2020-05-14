@@ -3,7 +3,7 @@ import style from "./player.module.css";
 
 const Player = ({ playerName }) => {
   return (
-    <div className={style.player}>
+    <div className="Player">
       <h1>{playerName}</h1>
     </div>
   );

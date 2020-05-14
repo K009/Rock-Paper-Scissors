@@ -1,0 +1,22 @@
+.App {
+  min-height: 100vh;
+  background-color: #ff8928;
+}
+
+.Header {
+  min-height: 20vh;
+  text-align: center;
+  justify-content: space-around;
+  background-color: #ffde22;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  min-height: 20vh;
+  background-color: #ffde22;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

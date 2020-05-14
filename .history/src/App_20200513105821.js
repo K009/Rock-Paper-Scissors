@@ -76,8 +76,8 @@ class App extends Component {
         <div className="Main-part">
           <div className="Players">
             <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
-            <Player playerName="BOT" weapon={playerTwo} />
+            <div className="break"> </div>
+            <Player playerName="AI-BOT" weapon={playerTwo} />
           </div>
           <div className="images">
             <img

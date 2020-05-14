@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.Header {
+  min-height: 20vh;
+  text-align: center;
+  justify-content: space-around;
+  background-color: rgb(245, 192, 19);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Footer {
+  min-height: 20vh;
+  background-color: rgb(245, 192, 19);
+  position: fixed;
+  bottom: 0;
+}
+
+footer {
+  height: 100px;
+  background-color: rgb(245, 192, 19);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

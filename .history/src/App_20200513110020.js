@@ -76,7 +76,7 @@ class App extends Component {
         <div className="Main-part">
           <div className="Players">
             <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
+            <div className="break"> </div>
             <Player playerName="BOT" weapon={playerTwo} />
           </div>
           <div className="images">
@@ -101,6 +101,7 @@ class App extends Component {
           </div>
           <div className="buttons"></div>
           <div className="winner">{winner ? this.selectWinner() : null}</div>
+          <output>{playerTwo}</output>
           <button className="weapon" onClick={this.startGame}>
             Start
           </button>

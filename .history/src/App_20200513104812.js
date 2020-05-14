@@ -76,10 +76,11 @@ class App extends Component {
         <div className="Main-part">
           <div className="Players">
             <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
-            <Player playerName="BOT" weapon={playerTwo} />
+            <div className="break"> </div>
+            <Player playerName="Mary" weapon={playerTwo} />
           </div>
-          <div className="images">
+
+          <div className="buttons">
             <img
               className="weaponimg"
               src={rock}
@@ -98,8 +99,25 @@ class App extends Component {
               onClick={() => this.selectWeapon("paper")}
               alt="Rock"
             />
+            <button
+              className="weapon"
+              onClick={() => this.selectWeapon("rock")}
+            >
+              Rock
+            </button>
+            <button
+              className="weapon"
+              onClick={() => this.selectWeapon("scissors")}
+            >
+              Scissors
+            </button>
+            <button
+              className="weapon"
+              onClick={() => this.selectWeapon("paper")}
+            >
+              Paper
+            </button>
           </div>
-          <div className="buttons"></div>
           <div className="winner">{winner ? this.selectWinner() : null}</div>
           <button className="weapon" onClick={this.startGame}>
             Start

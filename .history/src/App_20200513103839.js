@@ -3,7 +3,6 @@ import "./App.css";
 import Player from "./components/Player";
 import rock from "./components/img/rock.png";
 import scissors from "./components/img/scissors.png";
-import paper from "./components/img/paper.png";
 
 const weapon = ["rock", "paper", "scissors"];
 
@@ -76,30 +75,41 @@ class App extends Component {
         <div className="Main-part">
           <div className="Players">
             <Player playerName="Tom" weapon={playerOne} />
-            <div className="break">{playerTwo} </div>
-            <Player playerName="BOT" weapon={playerTwo} />
+            <div className="break"> </div>
+            <Player playerName="Mary" weapon={playerTwo} />
           </div>
-          <div className="images">
-            <img
-              className="weaponimg"
-              src={rock}
+          <img
+            className="weaponimg"
+            src={rock}
+            onClick={() => this.selectWeapon("rock")}
+            alt="Rock"
+          />
+          <img
+            className="weaponimg"
+            src={scissors}
+            onClick={() => this.selectWeapon("rock")}
+            alt="Rock"
+          />
+          <div className="buttons">
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("rock")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={scissors}
+            >
+              Rock
+            </button>
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("scissors")}
-              alt="Rock"
-            />
-            <img
-              className="weaponimg"
-              src={paper}
+            >
+              Scissors
+            </button>
+            <button
+              className="weapon"
               onClick={() => this.selectWeapon("paper")}
-              alt="Rock"
-            />
+            >
+              Paper
+            </button>
           </div>
-          <div className="buttons"></div>
           <div className="winner">{winner ? this.selectWinner() : null}</div>
           <button className="weapon" onClick={this.startGame}>
             Start

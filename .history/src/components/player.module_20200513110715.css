@@ -1,0 +1,9 @@
+.player {
+  background-color: #ffde22;
+  font-size: 20px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  width: 120px;
+  float: left;
+  margin-top: 20%;
+}

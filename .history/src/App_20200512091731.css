@@ -1,0 +1,12 @@
+.App {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.Title {
+  font-size: 50px;
+  text-align: center;
+  justify-content: space-around;
+  margin: 20px;
+  display: flex;
+}

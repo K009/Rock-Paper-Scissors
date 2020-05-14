@@ -1,0 +1,55 @@
+.Header {
+  min-height: 20vh;
+  text-align: center;
+  justify-content: space-around;
+  background-color: #ffde22;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Main-part {
+  background-color: red;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.Players {
+  text-align: center;
+  display: inline-block;
+}
+
+.break {
+  width: 100px;
+  min-height: 20vh;
+  background-color: white;
+  float: left;
+}
+
+.weapon {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  color: black;
+}
+
+.weapon:hover {
+  background: rgb(209, 208, 208);
+  cursor: pointer;
+}
+
+.start {
+  background: white;
+  border: none;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: black;
+}
+
+footer {
+  min-height: 20vh;
+  background-color: #ffde22;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

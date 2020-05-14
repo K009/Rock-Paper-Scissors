@@ -23,12 +23,15 @@
   color: white;
   font-size: 20px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #ffde22;
   background-color: red;
   margin-top: 30%;
   float: left;
 }
 
+output {
+  color: white;
+  margin-right: 10px;
+}
 .weaponimg {
   width: 150px;
   height: 150px;
