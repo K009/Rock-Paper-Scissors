@@ -1,3 +1,10 @@
+Here is how the game looks like:
+
+  ![Image of project](src/components/img/game.png "game_board")
+
+You are Tom (player one) and your mission is to win with this horrible bot! 
+Pick the right weapon and do your best. Wish you luck :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
